@@ -25,6 +25,7 @@ ENV BACKUP_INTERVAL 1
 ENV BACKUP_TIME 2:00
 ENV DATE_FORMAT %Y%m%d-%H%M%S
 ENV FILE_PREFIX backup-
+ENV S3_PATH /
 
 # Run the schedule command on startup
 CMD ["python", "-u", "/app/run.py"]

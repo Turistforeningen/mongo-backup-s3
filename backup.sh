@@ -5,6 +5,7 @@ set -e
 : ${MONGO_HOST:?}
 : ${MONGO_DB:?}
 : ${S3_BUCKET:?}
+: ${S3_PATH:?}
 : ${AWS_ACCESS_KEY_ID:?}
 : ${AWS_SECRET_ACCESS_KEY:?}
 : ${DATE_FORMAT:?}
@@ -29,7 +30,7 @@ tar -zcvf ${FILE_NAME} ${DUMP_OUT} && rm -fr ${DUMP_OUT}
 
 echo "Uploading to S3..."
 
-aws s3api put-object --bucket ${S3_BUCKET} --key ${FILE_NAME} --body ${FILE_NAME}
+aws s3api put-object --bucket ${S3_BUCKET} --key ${S3_PATH}${FILE_NAME} --body ${FILE_NAME}
 
 echo "Removing backup file..."
 

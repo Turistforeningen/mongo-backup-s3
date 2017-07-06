@@ -1,5 +1,7 @@
 FROM ubuntu:16.04
 
+VOLUME ["/secrets"]
+
 # Install Python
 RUN apt-get update && \
     apt-get -y install python python-pip

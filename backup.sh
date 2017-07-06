@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /secrets/aws.env
+
 set -e
 
 : ${MONGO_HOST:?}
